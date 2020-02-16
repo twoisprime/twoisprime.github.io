@@ -22,6 +22,7 @@ url: "https://twoisprime.com" # the base hostname & protocol for your site, e.g.
 # twitter_username: jekyllrb
 github_username: twoisprime
 linkedin_username: sbaskana
+show_excerpts: true
 
 # Build settings
 markdown: kramdown
