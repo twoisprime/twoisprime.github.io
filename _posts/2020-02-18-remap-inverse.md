@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "OpenCV Remap Inverse"
-permalink: opencv-remap-inverse
 tags:
     - python
     - notebook
@@ -17,6 +16,11 @@ a rectilinear projection and it is applied using the **Equirec2Perspec** package
 which can be found [here](https://github.com/fuenwang/Equirec2Perspec). The
 inverse of this mapping can be calculated analytically but our purpose here is
 to show a method that can be used for any mapping. 
+ 
+The test image used in this example can be downloaded from this
+[link](/images/equirectangular.jpg). 
+ 
+Updated: July 6th, 2020 
 
 
 {% highlight python %}
@@ -39,7 +43,7 @@ plt.show()
 {% endhighlight %}
 
  
-![png]({{ BASE_PATH }}/images/2020-02-18-remap-inverse_2_0.png) 
+![png]({{ BASE_PATH }}/images/2020-02-18-remap-inverse_4_0.png) 
 
  
 The **GetPerspective** method was modified to return the mappings that we'll
@@ -67,7 +71,7 @@ plt.show()
 {% endhighlight %}
 
  
-![png]({{ BASE_PATH }}/images/2020-02-18-remap-inverse_4_0.png) 
+![png]({{ BASE_PATH }}/images/2020-02-18-remap-inverse_6_0.png) 
 
  
 Now we would like to go back from the rectilinear projection to the
@@ -77,6 +81,7 @@ using the very clever idea mentioned at the beginning.
 
 {% highlight python %}
 h, w, _ = rectilinear.shape
+H, W, _ = equirectangular_image.shape
 map1_inverse = np.zeros((H, W))
 map2_inverse = np.zeros((H, W))
 
@@ -122,9 +127,9 @@ e3 = time.time()
 print("Weighted sums took {:0.2f} seconds".format(e3-e2))
 {% endhighlight %}
 
-    Tree creation took 17.60 seconds
-    Tree query took 25.56 seconds
-    Weighted sums took 537.21 seconds
+    Tree creation took 17.52 seconds
+    Tree query took 24.44 seconds
+    Weighted sums took 525.04 seconds
 
  
 The last step is to apply the remap function to the rectilinear projection using
@@ -138,7 +143,7 @@ plt.show()
 {% endhighlight %}
 
  
-![png]({{ BASE_PATH }}/images/2020-02-18-remap-inverse_8_0.png) 
+![png]({{ BASE_PATH }}/images/2020-02-18-remap-inverse_10_0.png) 
 
  
 This notebook is available on this [link](https://github.com/twoisprime/twoispri
