@@ -1,9 +1,11 @@
 ---
 layout: post
 title: "OpenCV Remap Inverse"
+permalink: opencv-remap-inverse
 tags:
     - python
     - notebook
+    - opencv
 --- 
 The remap function in OpenCV applies a generic geometrical transformation using
 a mapping that can be difficult to invert.
@@ -16,11 +18,6 @@ a rectilinear projection and it is applied using the **Equirec2Perspec** package
 which can be found [here](https://github.com/fuenwang/Equirec2Perspec). The
 inverse of this mapping can be calculated analytically but our purpose here is
 to show a method that can be used for any mapping. 
- 
-The test image used in this example can be downloaded from this
-[link](/images/equirectangular.jpg). 
- 
-Updated: July 6th, 2020 
 
 
 {% highlight python %}
@@ -43,8 +40,11 @@ plt.show()
 {% endhighlight %}
 
  
-![png]({{ BASE_PATH }}/images/2020-02-18-remap-inverse_4_0.png) 
+![png]({{ BASE_PATH }}/images/2020-02-18-opencv-remap-inverse_2_0.png) 
 
+ 
+The test image used in this example can be downloaded from this
+[link](/images/equirectangular.jpg). 
  
 The **GetPerspective** method was modified to return the mappings that we'll
 need later on. It just returns the projection plus the maps used as arguments to
@@ -71,7 +71,7 @@ plt.show()
 {% endhighlight %}
 
  
-![png]({{ BASE_PATH }}/images/2020-02-18-remap-inverse_6_0.png) 
+![png]({{ BASE_PATH }}/images/2020-02-18-opencv-remap-inverse_5_0.png) 
 
  
 Now we would like to go back from the rectilinear projection to the
@@ -143,8 +143,8 @@ plt.show()
 {% endhighlight %}
 
  
-![png]({{ BASE_PATH }}/images/2020-02-18-remap-inverse_10_0.png) 
+![png]({{ BASE_PATH }}/images/2020-02-18-opencv-remap-inverse_9_0.png) 
 
  
 This notebook is available on this [link](https://github.com/twoisprime/twoispri
-me.github.io/tree/master/notebooks/2020-02-18-remap-inverse.ipynb). 
+me.github.io/tree/master/notebooks/2020-02-18-opencv-remap-inverse.ipynb). 

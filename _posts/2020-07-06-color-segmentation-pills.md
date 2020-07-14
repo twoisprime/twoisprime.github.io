@@ -1,9 +1,11 @@
 ---
 layout: post
 title: "Color Segmentation: Pills"
+permalink: color-segmentation-pills
 tags:
     - python
     - notebook
+    - opencv
 --- 
 Color segmentation is very useful in many classic image analysis tasks. This is
 a simple real-world example of how color information can be used to find objects
